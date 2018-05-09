@@ -110,12 +110,12 @@ def eparams2seisEvents(eparams,starttime=None,endtime=None,minmag=-10.0,maxmag=1
   starttime and endtime should be a datatime value for begin/end of return values
   minmag,maxmag - magnitude range
   bbox should be a lllon lllat urlon urlat values of locations bounding box
-  prefferred should be 'p': preferred origin ; 'f': first origin ; 'l': last origin
+  preferred should be 'p': preferred origin ; 'f': first origin ; 'l': last origin
   includeunassoc - should we output also unassociated origins (default - False)
   will return a dictionary of SeisEvent objects, where id is event id or a yymmddhhmmss.s value
   '''
   if not preferred in ['p','f','l']:
-    if VERBOSE: print >> sys.stderr,"preffered origin should be 'p': preferred origin ; 'f': first origin ; 'l': last origin"
+    if VERBOSE: print >> sys.stderr,"preferred origin should be 'p': preferred origin ; 'f': first origin ; 'l': last origin"
     return {}
   # get events origins
   events = [eparams.event(i) for i in xrange(eparams.eventCount())]
@@ -148,7 +148,7 @@ def db2seisEvents(DBDATA,starttime=None,endtime=None,minmag=-10.0,maxmag=10.0,bb
   starttime and endtime should be a datatime value for begin/end of return values
   minmag,maxmag - magnitude range
   bbox should be a lllon lllat urlon urlat values of locations bounding box
-  prefferred is ignored
+  preferred is ignored
   includeunassoc - should we output also unassociated origins (default - False)
   will return a dictionary of SeisEvent objects
   '''
